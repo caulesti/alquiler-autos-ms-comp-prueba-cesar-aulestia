@@ -3,6 +3,7 @@ package ec.sasf.prueba.cesar.aulestia.web.controller;
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,6 +16,7 @@ import ec.sasf.prueba.cesar.aulestia.service.dto.AutoDto;
 
 @RestController
 @RequestMapping("/autos")
+@CrossOrigin("*")
 public class AutoController {
     private final AutoService autoService;
 

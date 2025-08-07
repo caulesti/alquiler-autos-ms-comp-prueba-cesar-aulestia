@@ -1,10 +1,11 @@
 import Layout from "../../Components/Layout"
+import FormularioCliente from "../../Components/FormularioCliente"
 
 const Clientes = () => {
 
   return (
     <Layout>
-      <div>Clientes</div>
+      <FormularioCliente></FormularioCliente>
     </Layout>
   )
 }

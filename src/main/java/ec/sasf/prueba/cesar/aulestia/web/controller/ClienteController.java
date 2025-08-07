@@ -1,6 +1,7 @@
 package ec.sasf.prueba.cesar.aulestia.web.controller;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +13,7 @@ import ec.sasf.prueba.cesar.aulestia.service.dto.ClienteDto;
 
 @RestController
 @RequestMapping("/clientes")
+@CrossOrigin("*")
 public class ClienteController {
     private final ClienteService clienteService;
 

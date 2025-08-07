@@ -15,15 +15,37 @@ export const AlquilerAutosProvider = ({ children }) => {
         .then(data => setAutos(data))
     },[])
 
+    const cargarAutos = () => {
+        fetch('http://localhost:8080/autos/disponible')
+            .then(response => response.json())
+            .then(data => setAutos(data))
+    }
+
     // ALQUILERES
+    const [alquileres, setAlquileres] = useState(null)
+    
+    useEffect(() => {
+        fetch('http://localhost:8080/alquileres/multas')
+        .then(response => response.json())
+        .then(data => setAlquileres(data))
+    },[])
+
+    const cargarMultas = () => {
+        fetch('http://localhost:8080/alquileres/multas')
+            .then(response => response.json())
+            .then(data => setAlquileres(data))
+    }
    
     // CLIENTES
-    
 
     return (
         <AlquilerAutosContext.Provider value={{
             autos,
             setAutos,
+            alquileres,
+            setAlquileres,
+            cargarAutos,
+            cargarMultas
         }}>
             { children }
         </AlquilerAutosContext.Provider>

@@ -8,6 +8,7 @@ import NotFound from '../NotFound'
 import Navbar from '../../Components/Navbar'
 
 import '../App/App.css'
+import { AlquilerAutosProvider } from '../../Context'
 
 const AppRoutes = () => {
   let routes = useRoutes([
@@ -23,10 +24,13 @@ const AppRoutes = () => {
 const App = () => {
 
   return (
-    <BrowserRouter>
-      <Navbar />
-      <AppRoutes />
-    </BrowserRouter>    
+    <AlquilerAutosProvider>
+      <BrowserRouter>
+        <Navbar />
+        <AppRoutes />
+      </BrowserRouter>
+    </AlquilerAutosProvider>
+        
   )
 }
 
